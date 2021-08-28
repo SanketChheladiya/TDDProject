@@ -42,6 +42,10 @@ public class TestCalculator {
         Calculator.add("-1");
     }
 
+    @Test
+    public void numbergreaterthan1000() throws Exception {
+        assertEquals(12, Calculator.add("1001;2,10"));
+    }
 
 
 }

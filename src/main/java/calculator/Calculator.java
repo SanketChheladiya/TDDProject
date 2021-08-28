@@ -33,7 +33,12 @@ public class Calculator
         for(int i=0;i<numbers.length;i++)
         {
             if(!numbers[i].equals(""))
+            {
+                if(Integer.parseInt(numbers[i]) > 1000)
+                    continue;
                 sum = sum + Integer.parseInt(numbers[i]);
+            }
+
         }
        return sum;
     }
