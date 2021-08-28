@@ -1,7 +1,8 @@
 package calculator;
 
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class TestCalculator {
 
@@ -11,32 +12,34 @@ public class TestCalculator {
     }
 
     @Test
-    public void testEmptyString() {
+    public void testEmptyString() throws Exception {
          assertEquals(0, Calculator.add(""));
     }
 
     @Test
-    public void testOneNumber() {
+    public void testOneNumber() throws Exception {
         assertEquals(1, Calculator.add("1"));
     }
 
     @Test
-    public void testTwoNumber() {
+    public void testTwoNumber() throws Exception {
         assertEquals(3, Calculator.add("1,2"));
     }
 
     @Test
-    public void newlineAsDelimiter()
-    {
+    public void newlineAsDelimiter() throws Exception {
         assertEquals(6, Calculator.add("1\n2,3"));
     }
 
     @Test
-    public void allPossibleDelimiter()
-    {
-        assertEquals(3, Calculator.add("//;\n1;2"));
+    public void allPossibleDelimiter() throws Exception {
+        assertEquals(3, Calculator.add("1;2"));
     }
 
-
+    @Test(expected = Exception.class)
+    public void negativeInputReturnException() throws Exception
+    {
+        Calculator.add("-1");
+    }
 
 }
