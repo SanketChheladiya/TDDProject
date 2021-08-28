@@ -32,7 +32,7 @@ public class Calculator
 
         for(int i=0;i<numbers.length;i++)
         {
-            if(numbers[i]!="")
+            if(!numbers[i].equals(""))
                 sum = sum + Integer.parseInt(numbers[i]);
         }
        return sum;
