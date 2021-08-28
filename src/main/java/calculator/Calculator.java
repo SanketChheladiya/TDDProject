@@ -2,7 +2,7 @@ package calculator;
 public class Calculator
 {
 
-    private static final String delimiter = ",|\n";
+    private static final String delimiter = ",|\n|/|;|//";
     public static int add(String text)
     {
 
@@ -26,9 +26,11 @@ public class Calculator
         int sum=0;
         for(int i=0;i<numbers.length;i++)
         {
-            sum = sum + Integer.parseInt(numbers[i]);
+            if(numbers[i]!="")
+                sum = sum + Integer.parseInt(numbers[i]);
         }
        return sum;
     }
+
 
 }
