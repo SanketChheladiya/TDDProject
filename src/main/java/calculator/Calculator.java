@@ -1,9 +1,12 @@
 package calculator;
 public class Calculator
 {
+
+    private static final String delimiter = ",|\n";
     public static int add(String text)
     {
-        String[] numbers = text.split(",");
+
+        String[] numbers = text.split(delimiter);
         if(text.equals(""))
         {
             return 0;
@@ -15,7 +18,17 @@ public class Calculator
         }
         else
         {
-             return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+                return getSum(numbers);
         }
     }
+    private static int getSum(String[] numbers)
+    {
+        int sum=0;
+        for(int i=0;i<numbers.length;i++)
+        {
+            sum = sum + Integer.parseInt(numbers[i]);
+        }
+       return sum;
+    }
+
 }
